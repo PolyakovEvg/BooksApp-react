@@ -24,23 +24,22 @@ const AppProvider = ({ children }) => {
   const [sortValue, setSortValue] = useState("relevance");
   const [filterValue, setFilterValue] = useState("all");
   const [filteredCategories, setFilteredCategories] = useState([]);
-  const [booksSortedByDate, setBooksSortedByDate] = useState([]);
+  const [relevanceBooks, setRelevanceBooks] = useState([]);
 
   const fetchBooks = useCallback(async () => {
     setLoading(true);
     try {
       console.log("fetch starting");
       const res = await axios.get(
-        `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}${filterValue !== "all" ? `+subject:${filterValue}` : ""}&key=${API_KEY}&maxResults=${currentMaxResults}&startIndex=${(pageNumber - 1) * 30}`
+        `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}${
+          filterValue !== "all" ? `+subject:${filterValue}` : ""
+        }&orderBy=${sortValue}&key=${API_KEY}&maxResults=${currentMaxResults}&startIndex=${
+          (pageNumber - 1) * 30
+        }`
       );
-
-      // const res = await axios.get(
-      //   `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}${filterValue !== 'all' ? `+subject:${filterValue}` : ''}&orderBy=${sortValue}&key=${API_KEY}&maxResults=${currentMaxResults}&startIndex=${(pageNumber - 1) * 30}`
-      //   );
-
       if (res.data.totalItems > 1) {
         setResultTitle(`По вашему запросу найдено: ${res.data.totalItems}`);
-        setTotalCount(prevCount => prevCount + res.data.totalItems);
+        setTotalCount((prevCount) => prevCount + res.data.totalItems);
         setBooks([...books, ...res.data.items]);
       } else {
         setResultTitle(`По вашему запросу ничего не найдено`);
@@ -51,35 +50,13 @@ const AppProvider = ({ children }) => {
       console.log(error);
     }
   }, [searchTerm, pageNumber, setSortValue, setFilterValue, filterValue]);
-console.log(totalCount)
 
-
-  // Sort handler
-  const handleSortChange = (e) => {
-    const relevanceBook = [...books];
-    setSortValue(e.target.value);
-    if (sortValue === "newest") {
-      const sortedBooks = books.sort((bookA, bookB) => {
-        const publishedDateA = bookA.volumeInfo.publishedDate
-          ? new Date(bookA.volumeInfo.publishedDate)
-          : new Date(0);
-        const publishedDateB = bookB.volumeInfo.publishedDate
-          ? new Date(bookB.volumeInfo.publishedDate)
-          : new Date(0);
-        return publishedDateB - publishedDateA;
-      });
-      setBooks(sortedBooks);
-    } else {
-      setBooks(relevanceBook);
-    }
-  };
 
   // Filter handler
-  const handleFilterChange = (e) => {
-    console.log(e.target.value);
-    setBooks([])
-    setFilterValue(e.target.value)
-  };
+  // const handleFilterChange = (e) => {
+  //   setBooks([]);
+  //   setFilterValue(e.target.value);
+  // };
 
   // Use effect
 
@@ -113,13 +90,13 @@ console.log(totalCount)
         pageNumber,
         setTotalCount,
         totalCount,
-        // scrollHandler,
-        isLoading,
-        handleSortChange,
         sortValue,
-        handleFilterChange,
         filterValue,
         filteredCategories,
+        setSortValue,
+        relevanceBooks,
+        setRelevanceBooks,
+        setFilterValue
       }}
     >
       {children}

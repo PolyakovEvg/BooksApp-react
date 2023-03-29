@@ -9,6 +9,7 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 0.5fr));
     grid-gap: 20px;
     box-sizing: border-box;
+    justify-content: center
     
 }
 
@@ -28,8 +29,22 @@
     height: 60px;
     position: fixed;
     bottom: 150px;
-    right: 10%;
+    right: 5%;
     background: url(/src/assets/imgs/up-arrow.png) center no-repeat;
     background-size: contain;
 
 }
+
+@media screen and (min-width: 320px) and (max-width: 480px){
+    .btn-up{
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        position: fixed;
+        bottom: 50px;
+        right: 0;
+        background: url(/src/assets/imgs/up-arrow.png) center no-repeat;
+        background-size: contain;
+    
+    }
+  }

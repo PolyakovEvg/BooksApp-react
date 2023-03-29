@@ -2,11 +2,19 @@ import "./FilterForm";
 import { useGlobalContext } from "../../context";
 
 const FilterForm = () => {
-  const { handleFilterChange, filterValue, filteredCategories } =
+  const { setFilterValue, filterValue, filteredCategories, setBooks } =
     useGlobalContext();
+
+    const handleFilterChange = (e) => {
+      setBooks([]);
+      setFilterValue(e.target.value);
+    };
+
+
   return (
     <>
-      <div>
+      <div className="filter-form select">
+        <label className="select-label"> Filter </label>
         <select
           className="form-control"
           value={filterValue}

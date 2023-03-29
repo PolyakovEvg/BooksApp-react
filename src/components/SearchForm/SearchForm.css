@@ -27,7 +27,7 @@
     .search-input{
       outline: 0;
       border: 0;
-      width: 350px;
+      max-width: 350px;
       padding: 0 0.5rem;
       font-size: 15px;
       height: 35px;
@@ -38,6 +38,7 @@
         align-items: center;
         justify-content: center;
         transition: 0.2s;
+        padding-bottom: 15px;
     }
     .search-btn{
       background: center center url('../../assets/imgs/search.png');
@@ -52,4 +53,37 @@
     }
     .red-text{
       color: red
+    }
+
+    .search-link{
+      text-decoration: none;
+      color: #ffffff;
+    }
+    .search-options{
+      display: flex;
+      padding: 15px 10px 10px 15px;
+      align-items: center;
+      justify-content: center;
+      align-content: center;
+      flex-wrap: wrap;
+    }
+    select{
+      outline: 0;
+      border: 0;
+      width: 132px;
+      font-size: 15px;
+      height: 35px;
+      border-radius: 5px;
+      color: rgba(0,0,0, 0.6);
+      margin-right: 10px;
+    }
+    label{
+      font-size: 1.3em;
+      text-align: center;
+      width: 60px;
+      display: inline-block;
+    }
+
+    .filter-form, .sort-form{
+      padding-top: 15px;
     }

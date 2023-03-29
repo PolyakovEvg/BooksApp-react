@@ -2,7 +2,7 @@ import "./SearchForm.css";
 import SortForm from "./SortForm";
 import FilterForm from "./FilterForm";
 import {  useRef } from "react";
-import {  useNavigate } from "react-router-dom";
+import {  Link, useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../../context";
 
 const SearchForm = () => {
@@ -14,11 +14,13 @@ const SearchForm = () => {
     books,
     searchTerm,
     setTotalCount,
-    setPageNumber
+    setPageNumber, 
     
   } = useGlobalContext();
+  
   const searchText = useRef("");
   const navigate = useNavigate("");
+
   const blickFunction = () => {
     setEmpty(true);
     setTimeout(() => {
@@ -29,9 +31,10 @@ const SearchForm = () => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     let searchQuery = searchText.current.value.trim();
-    if (searchText.length === 0) {
+    if (searchQuery.length === 0) {
       setResultTitle("Введите книгу для поиска");
       blickFunction();
+      setTotalCount(0)
     } else if(searchQuery !== searchTerm) {
 
       setBooks([]);
@@ -49,29 +52,35 @@ const SearchForm = () => {
     <>
       <div className="search-wrap">
         <div className="search-title">
+        <Link to="/" className="search-link">
           <h1> Search for book </h1>
+          </Link>
         </div>
+          <div className="search-string">
         <div className="search-form" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            className="search-input"
-            placeholder={
-              searchText.current.value
-                ? searchText.current.value
-                : "Enter your book name"
-            }
-            ref={searchText}
-            onKeyPress={(e) => {
-              if (e.key === "Enter") {
-                {
-                  handleSubmit(e);
-                }
+            <input
+              type="text"
+              className="search-input"
+              placeholder={
+                searchText.current.value
+                  ? searchText.current.value
+                  : "Enter your book name"
               }
-            }}
-          />
-          <button className="search-btn" onClick={handleSubmit}></button>
+              ref={searchText}
+              onKeyPress={(e) => {
+                if (e.key === "Enter") {
+                  {
+                    handleSubmit(e);
+                  }
+                }
+              }}
+            />
+            <button className="search-btn" onClick={handleSubmit}></button>
+            </div>
+          <div className='search-options'>
           <SortForm/>
           <FilterForm/>
+          </div>
         </div>
       </div>
     </>
