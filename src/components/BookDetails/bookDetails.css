@@ -1,0 +1,56 @@
+.book-details{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 0.5fr));
+    color: black;
+    --gray-text-color: rgba(0,0,0, 0.7);
+    padding-top: 15px;
+}
+
+.book-details-title{
+    color:black;
+    font-size: 3em;
+    padding-top: 30px;
+
+}
+
+.book-details-cover{
+    display: block;
+    margin: 0 auto;
+    width: 55%;
+    box-shadow: 1em 1.5em .4em  rgba(1, 1, 1, 0.203);
+}
+
+.book-details-categories{
+  font-size: 1.3em;
+
+}
+
+.book-details-authors{
+  font-size: 1.3em;
+  padding-top: 15px;
+  color: var(--gray-text-color);
+  text-decoration: underline;
+  text-decoration-color: var(--gray-text-color);
+
+}
+.book-details-description{
+  font-size: 1.3em;
+  padding-top: 15px;
+  color: var(--gray-text-color);
+ 
+
+}
+
+
+/* <section className="book-details">
+<button type="button" onClick={() => navigate("/book")}>
+  <span>Go back</span>
+</button>
+<img
+  className="book-details-cover"
+  src={book?.thumbnail || emptyCover}
+/>
+<div className="book-information">
+<div className="book-details-title">{book?.title}</div>
+<div className="book-details-categories">{book?.categories}</div>
+<div className="book-details-description"> {book?.description}</div> */

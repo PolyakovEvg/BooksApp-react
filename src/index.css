@@ -1,0 +1,74 @@
+
+:root {
+    max-width: 1280px;
+    margin: 0 auto;
+    @import url('./assets/fonts/Poppins-Thin.ttf');
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color:#ffffff;
+    
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    --gray-text-color: color: rgba(0,0,0, 0.7);
+  }
+  *{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  html{
+    font-size: 75.5%;
+  }
+
+  button {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 0.6em 1.2em;
+    font-size: 1.3em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  button:hover {
+    border-color: #646cff;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+
+  .btn-back{
+
+    margin: 20px 20px;
+    height: 50px;
+    width: 50px;
+    background: url('/src/assets/imgs/left-arrow.png') center no-repeat;
+    background-size: cover;
+  }
+
+  .btn-back:hover{
+    color: blue;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      color: #213547;
+      background-color: #ffffff;
+    }
+    a:hover {
+      color: #747bff;
+    }
+    button {
+      background-color: #f9f9f9;
+    }
+  }
+  
+  p{
+    color:rgba(0,0,0)
+  }

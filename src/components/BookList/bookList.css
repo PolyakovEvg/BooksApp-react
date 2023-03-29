@@ -1,0 +1,35 @@
+.book-list-title{
+    color: #000;
+}
+.container{
+    width: 80%;
+    padding: 0 20px 20px 20px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 0.5fr));
+    grid-gap: 20px;
+    box-sizing: border-box;
+    
+}
+
+.total-book-count{
+    padding: 10px;
+    text-align: center;
+    color:#000;
+    font-size: 1.2em;
+}
+.red-count{
+    color: red;
+}
+
+.btn-up{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 150px;
+    right: 10%;
+    background: url(/src/assets/imgs/up-arrow.png) center no-repeat;
+    background-size: contain;
+
+}
