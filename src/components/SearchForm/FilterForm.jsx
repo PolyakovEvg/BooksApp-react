@@ -5,11 +5,10 @@ const FilterForm = () => {
   const { setFilterValue, filterValue, filteredCategories, setBooks } =
     useGlobalContext();
 
-    const handleFilterChange = (e) => {
-      setBooks([]);
-      setFilterValue(e.target.value);
-    };
-
+  const handleFilterChange = (e) => {
+    setBooks([]);
+    setFilterValue(e.target.value);
+  };
 
   return (
     <>

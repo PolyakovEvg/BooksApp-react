@@ -1,50 +1,47 @@
-.book-list-title{
-    color: #000;
+.book-list-title {
+  color: #000;
 }
-.container{
-    width: 80%;
-    padding: 0 20px 20px 20px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 0.5fr));
-    grid-gap: 20px;
-    box-sizing: border-box;
-    justify-content: center
-    
-}
-
-.total-book-count{
-    padding: 10px;
-    text-align: center;
-    color:#000;
-    font-size: 1.2em;
-}
-.red-count{
-    color: red;
+.container {
+  width: 80%;
+  padding: 0 20px 20px 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 0.5fr));
+  grid-gap: 20px;
+  box-sizing: border-box;
+  justify-content: center;
 }
 
-.btn-up{
+.total-book-count {
+  padding: 10px;
+  text-align: center;
+  color: #000;
+  font-size: 1.2em;
+}
+.red-count {
+  color: red;
+}
+
+.btn-up {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  bottom: 150px;
+  right: 5%;
+  background: url(/src/assets/imgs/up-arrow.png) center no-repeat;
+  background-size: contain;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .btn-up {
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
     position: fixed;
-    bottom: 150px;
-    right: 5%;
+    bottom: 50px;
+    right: 0;
     background: url(/src/assets/imgs/up-arrow.png) center no-repeat;
     background-size: contain;
-
-}
-
-@media screen and (min-width: 320px) and (max-width: 480px){
-    .btn-up{
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        position: fixed;
-        bottom: 50px;
-        right: 0;
-        background: url(/src/assets/imgs/up-arrow.png) center no-repeat;
-        background-size: contain;
-    
-    }
   }
+}

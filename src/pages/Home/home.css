@@ -1,11 +1,8 @@
-
-  .header{
-    display: flex;
-    position: relative;
-    max-width: 1280px;
-    height: 250px;
-    box-shadow: 0 5px 10px;
-    top: 0;
-
-  }
-  
+.header {
+  display: flex;
+  position: relative;
+  max-width: 1280px;
+  height: 250px;
+  box-shadow: 0 5px 10px;
+  top: 0;
+}

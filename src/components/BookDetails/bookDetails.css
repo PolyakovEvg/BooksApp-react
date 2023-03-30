@@ -1,46 +1,40 @@
-.book-details{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 0.5fr));
-    color: black;
-    --gray-text-color: rgba(0,0,0, 0.7);
-    padding-top: 15px;
+.book-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 0.5fr));
+  color: black;
+  --gray-text-color: rgba(0, 0, 0, 0.7);
+  padding-top: 15px;
 }
 
-.book-details-title{
-    color:black;
-    font-size: 3em;
-    padding-top: 30px;
-
+.book-details-title {
+  color: black;
+  font-size: 3em;
+  padding-top: 30px;
 }
 
-.book-details-cover{
-    display: block;
-    margin: 0 auto;
-    width: 55%;
-    box-shadow: 1em 1.5em .4em  rgba(1, 1, 1, 0.203);
+.book-details-cover {
+  display: block;
+  margin: 0 auto;
+  width: 55%;
+  box-shadow: 1em 1.5em 0.4em rgba(1, 1, 1, 0.203);
 }
 
-.book-details-categories{
+.book-details-categories {
   font-size: 1.3em;
-
 }
 
-.book-details-authors{
+.book-details-authors {
   font-size: 1.3em;
   padding-top: 15px;
   color: var(--gray-text-color);
   text-decoration: underline;
   text-decoration-color: var(--gray-text-color);
-
 }
-.book-details-description{
+.book-details-description {
   font-size: 1.3em;
   padding-top: 15px;
   color: var(--gray-text-color);
- 
-
 }
-
 
 /* <section className="book-details">
 <button type="button" onClick={() => navigate("/book")}>

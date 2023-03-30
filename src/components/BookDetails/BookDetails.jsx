@@ -43,19 +43,21 @@ const BookDetails = () => {
 
   return (
     <>
-        <button type="button" className="btn-back" onClick={() => navigate("/book")}>
-          
-        </button>
+      <button
+        type="button"
+        className="btn-back"
+        onClick={() => navigate("/book")}
+      ></button>
       <section className="book-details">
         <img
           className="book-details-cover"
           src={book?.thumbnail || emptyCover}
         />
         <div className="book-information">
-        <div className="book-details-categories">{book?.categories}</div>
-        <div className="book-details-title">{book?.title}</div>
-        <div className="book-details-authors">{book?.authors}</div>
-        <div className="book-details-description"> {book?.description}</div>
+          <div className="book-details-categories">{book?.categories}</div>
+          <div className="book-details-title">{book?.title}</div>
+          <div className="book-details-authors">{book?.authors}</div>
+          <div className="book-details-description"> {book?.description}</div>
         </div>
       </section>
     </>

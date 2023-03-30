@@ -2,14 +2,13 @@ import "./home.css";
 import SearchForm from "../../components/SearchForm/SearchForm";
 import { Outlet } from "react-router-dom";
 
-
 const Home = () => {
   return (
     <>
       <div className="header">
-            <SearchForm/>
+        <SearchForm />
       </div>
-            <Outlet/>
+      <Outlet />
     </>
   );
 };

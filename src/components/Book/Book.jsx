@@ -20,7 +20,9 @@ const Book = (book) => {
             <div className="book-сategory">
               {categories ? `Категория: ${categories[0]}` : null}
             </div>
-            <h3 className="book-title">{ title.length < 30 ? title : `${title.slice(0,30)}...`}</h3>
+            <h3 className="book-title">
+              {title.length < 30 ? title : `${title.slice(0, 30)}...`}
+            </h3>
             <div className="book-authors">{authors}</div>
           </div>
         </Link>
